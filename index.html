@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ruhi Nath, MPH | Public Health Leader & Advocate</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* A more modern and hopeful design system */
+        :root {
+            --background: #F8F5F2; /* Warm, inviting beige */
+            --text: #3D352E; /* Rich, earthy brown */
+            --primary: #2A7886; /* Deep, calming teal for trust and health */
+            --secondary: #E68A00; /* Vibrant, optimistic orange for advocacy */
+            --accent: #F4A261; /* Softer accent orange */
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--background);
+            color: var(--text);
+        }
+        h1, h2, h3, h4, h5 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+        }
+        .nav-link {
+            @apply relative text-lg font-medium tracking-wide transition-colors duration-300;
+        }
+        .nav-link:hover {
+            color: var(--secondary);
+        }
+        .nav-link.active {
+            color: var(--secondary);
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--secondary);
+            transition: width 0.3s ease-in-out;
+        }
+        .nav-link.active::after, .nav-link:hover::after {
+            width: 100%;
+        }
+        .page-section {
+            display: none; /* Hidden by default, shown by JS */
+        }
+        .page-section.active {
+            display: block;
+        }
+        .btn-primary {
+            @apply bg-[var(--secondary)] text-white font-bold py-3 px-8 rounded-full hover:opacity-90 transition-opacity duration-300 inline-flex items-center gap-2;
+        }
+        .card {
+            @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out;
+        }
+        .card:hover {
+            @apply shadow-2xl -translate-y-2;
+        }
+        /* Fade-in animation for active page */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .page-section.active {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .publication-item {
+             @apply bg-white p-6 rounded-lg shadow-md border-l-4;
+        }
+        .publication-link {
+            @apply underline hover:text-[var(--secondary)] transition-colors;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-5 flex items-center justify-between">
+            <a href="#home" class="page-link text-2xl font-extrabold tracking-tight" style="color: var(--primary);">Ruhi Nath, MPH</a>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="nav-link page-link active">Home</a>
+                <a href="#about" class="nav-link page-link">About</a>
+                <a href="#work" class="nav-link page-link">Work</a>
+                <a href="#publications" class="nav-link page-link">Publications</a>
+                <a href="#contact" class="nav-link page-link">Contact</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md focus:outline-none" style="color: var(--primary);">
+                <i data-lucide="menu" class="h-6 w-6"></i>
+            </button>
+        </nav>
+         <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white/95">
+            <div class="flex flex-col items-center space-y-4 py-4">
+                <a href="#home" class="nav-link page-link active">Home</a>
+                <a href="#about" class="nav-link page-link">About</a>
+                <a href="#work" class="nav-link page-link">Work</a>
+                <a href="#publications" class="nav-link page-link">Publications</a>
+                <a href="#contact" class="nav-link page-link">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6">
+
+        <!-- HOME PAGE -->
+        <section id="home" class="page-section active pt-12 md:pt-20">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Building Healthier Communities Through Compassion & Advocacy.</h1>
+                    <p class="text-xl text-gray-700 mb-10">
+                        I'm a public health leader dedicated to designing community-centered solutions that advance well-being and create lasting change.
+                    </p>
+                    <a href="#work" class="btn-primary page-link">Explore My Work</a>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="relative w-full max-w-md mx-auto">
+                         <div class="absolute inset-0 bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] rounded-full blur-3xl opacity-30"></div>
+                         <img src="https://o7ktqzhftnetxhhu.public.blob.vercel-storage.com/Ruhi_Portraits_HeyZinahPhotography--12-tqmZBZ674tcFww5gwwy780tPZvLaoz.jpg" alt="Ruhi Nath" class="relative rounded-2xl shadow-2xl w-full object-cover" onerror="this.onerror=null;this.src='https://placehold.co/600x700/f8f5f2/3D352E?text=Ruhi+Nath';">
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Flagship Work Section -->
+            <div class="mt-24 md:mt-32 py-16 bg-white rounded-3xl shadow-xl">
+                <div class="max-w-4xl mx-auto px-6 text-center">
+                    <h4 class="text-sm font-bold uppercase tracking-widest" style="color: var(--secondary);">Flagship Work</h4>
+                    <h2 class="text-4xl md:text-5xl font-bold my-4">Leading a National Effort to Reduce Maternal Mortality</h2>
+                    <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                        At Stanford's Program on Research in Implementation Science and Health Care Models (PRIHSM), I am proud to manage a flagship initiative dedicated to tackling the maternal mortality crisis across the country. We are developing and implementing innovative, community-based models of care to ensure safer pregnancies and childbirth for all.
+                    </p>
+                    <a href="https://dunleviemfm.stanford.edu/prihsm.html" target="_blank" class="btn-primary">Learn More at PRIHSM</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT PAGE -->
+        <section id="about" class="page-section py-12 md:py-20">
+             <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-12">My Mission</h2>
+                <div class="text-lg space-y-6 text-gray-800 leading-relaxed">
+                    <p>My work in public health is animated by a single, core belief: that everyone deserves the opportunity to live a healthy and dignified life. I have dedicated my career to turning this principle into reality by uniting research, community engagement, and strategic program management.</p>
+                    <p>I build solutions that uplift community voices and dismantle systemic barriers to well-being. A key example is my work at the Massachusetts Association of Community Health Workers (MACHW), where I secured a $1.39 million state grant to create a new behavioral health pipeline—a program that empowers community health workers with lived experience to lead and serve.</p>
+                    <p>This commitment now drives my work as a Program Manager at Stanford's PRIHSM, where I lead national efforts to end the maternal mortality crisis. For me, this is more than a profession—it's a lifelong mission to foster hope, build resilient communities, and forge a healthier, more just world.</p>
+                </div>
+                <div class="mt-16 text-center">
+                     <h3 class="text-3xl font-bold mb-6">Education</h3>
+                     <div class="flex flex-col md:flex-row justify-center items-center gap-8">
+                        <div class="text-center">
+                            <p class="font-bold text-xl">Harvard T.H. Chan School of Public Health</p>
+                            <p>Master of Public Health, Health Management</p>
+                        </div>
+                        <div class="w-1 h-12 bg-gray-200 hidden md:block"></div>
+                        <div class="text-center">
+                            <p class="font-bold text-xl">University of California, Berkeley</p>
+                            <p>Bachelor of Arts, Public Health</p>
+                        </div>
+                     </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- WORK PAGE -->
+        <section id="work" class="page-section py-12 md:py-20">
+            <h2 class="text-5xl font-bold text-center mb-10">Featured Initiatives</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <div class="card md:col-span-2 lg:col-span-3 bg-teal-50 border-l-8" style="border-color: var(--secondary);">
+                    <div class="p-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <i data-lucide="shield-check" class="w-10 h-10" style="color: var(--secondary);"></i>
+                            <h3 class="text-2xl font-bold">Reducing Maternal Mortality (PRIHSM)</h3>
+                        </div>
+                        <p>As my flagship project at Stanford, I manage a national initiative to design, implement, and evaluate new models of care aimed at preventing maternal deaths. This work involves collaborating with healthcare systems, community organizations, and policymakers to create sustainable, life-saving change.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="p-8">
+                        <i data-lucide="heart-pulse" class="w-10 h-10 mb-4" style="color: var(--secondary);"></i>
+                        <h3 class="text-2xl font-bold mb-2">Pediatric Cancer Trials</h3>
+                        <p>Advanced the search for new treatments by managing over 15 multi-institutional pediatric cancer clinical trials, directly improving care and bringing hope to young patients and their families at Stanford.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="p-8">
+                        <i data-lucide="users" class="w-10 h-10 mb-4" style="color: var(--secondary);"></i>
+                        <h3 class="text-2xl font-bold mb-2">CHW Workforce Pipeline</h3>
+                        <p>Secured a landmark $1.39M state grant to establish a new behavioral health pipeline, creating advanced career and educational opportunities for community health workers to profoundly impact their communities.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="p-8">
+                        <i data-lucide="message-square" class="w-10 h-10 mb-4" style="color: var(--secondary);"></i>
+                        <h3 class="text-2xl font-bold mb-2">South Asian Community Dialogue</h3>
+                        <p>Ignited a vital, large-scale dialogue on social issues within the South Asian community through viral infographics, fostering deeper understanding and challenging long-held stereotypes.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="p-8">
+                        <i data-lucide="heart-handshake" class="w-10 h-10 mb-4" style="color: var(--secondary);"></i>
+                        <h3 class="text-2xl font-bold mb-2">Disability Bioethics Seminar</h3>
+                        <p>Advanced the field of disability studies by co-designing a landmark virtual seminar, uniting leading scholars to shape the future of applied disability bioethics in a fully accessible environment.</p>
+                    </div>
+                </div>
+                 <div class="card">
+                    <div class="p-8">
+                        <i data-lucide="school" class="w-10 h-10 mb-4" style="color: var(--secondary);"></i>
+                        <h3 class="text-2xl font-bold mb-2">100 Strong Mentorship</h3>
+                        <p>Forged a powerful mentorship pipeline for young women by co-founding a non-profit from the ground up, empowering the next generation of female leaders with vital confidence and leadership skills.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="p-8">
+                        <i data-lucide="file-text" class="w-10 h-10 mb-4" style="color: var(--secondary);"></i>
+                        <h3 class="text-2xl font-bold mb-2">Graduate Student Advocacy</h3>
+                        <p>Championed the needs of the entire graduate student body by mobilizing over 1,000 peers, compelling Harvard's administration to implement lasting, university-wide improvements to alumni resources.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS PAGE -->
+        <section id="publications" class="page-section py-12 md:py-20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl font-bold text-center mb-12">Selected Publications & Features</h2>
+                <div class="space-y-6">
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl"><a href="https://www.sciencedirect.com/science/article/abs/pii/S0146000524001101" target="_blank" class="publication-link">CMQCC obstetric sepsis toolkit update: A patient-centered approach to quality improvement</a></h4>
+                        <p class="text-sm text-gray-600 mt-1">Published in the American Journal of Obstetrics and Gynecology</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl"><a href="https://hriainstitute.org/healthequity/community-health-workers-the-health-equity-workforce/" target="_blank" class="publication-link">Community Health Workers: The Health Equity Workforce</a></h4>
+                        <p class="text-sm text-gray-600 mt-1">Health Resources in Action (HRiA)</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl"><a href="https://hsph.harvard.edu/news/amid-pandemic-harvard-chan-students-connect-with-isolated-local-seniors/" target="_blank" class="publication-link">Amid pandemic, Harvard Chan students connect with isolated local seniors</a></h4>
+                        <p class="text-sm text-gray-600 mt-1">Harvard T.H. Chan School of Public Health</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl">Database Development Leads to Significant Improvement in Oncology Clinical Trial Enrollment and Child Health.</h4>
+                        <p class="text-sm text-gray-600 mt-1">Presented at the Stanford Child Health Research Institute Symposium</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl">Database Development for Essential Data Capture Leads to Significant Improvement in Oncology Clinical Trial Enrollment.</h4>
+                        <p class="text-sm text-gray-600 mt-1">Presented at the National Children's Oncology Group Fall Meeting</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl">Spotlight on the Public Health Associates Program</h4>
+                        <p class="text-sm text-gray-600 mt-1">The Associate Collective, CDC</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl"><a href="https://blumcenter.berkeley.edu/cgiu-2014/" target="_blank" class="publication-link">Big Ideas Grand Prize Winner '100 Strong' Featured at Clinton Global Initiative University</a></h4>
+                        <p class="text-sm text-gray-600 mt-1">Blum Center for Developing Economies</p>
+                    </div>
+                     <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl">Differentiating the roles of STAT5B and STAT5A in human CD4+ T cells.</h4>
+                        <p class="text-sm text-gray-600 mt-1">The Journal of Clinical Immunology</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl"><a href="https://www.dailycal.org/2013/08/21/small-start-big-ideas" target="_blank" class="publication-link">Small start, big ideas: student-created nonprofit 100 Strong to mentor middle school girls</a></h4>
+                        <p class="text-sm text-gray-600 mt-1">The Daily Californian</p>
+                    </div>
+                    <div class="publication-item" style="border-color: var(--secondary);">
+                        <h4 class="font-semibold text-xl">Stat5b, Not Stat5a, Is a Critical Modulator of Human Treg Development and Function.</h4>
+                        <p class="text-sm text-gray-600 mt-1">The Journal of Allergy and Clinical Immunology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT PAGE -->
+        <section id="contact" class="page-section py-12 md:py-20">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-5xl font-bold mb-6">Let's Connect</h2>
+                <p class="text-xl text-gray-700 mb-10">
+                    I am always open to collaboration, new ideas, and conversations about how we can build a more vibrant future. Please feel free to reach out.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-6 text-lg">
+                    <a href="mailto:rnath@alumni.harvard.edu" class="flex items-center gap-2 hover:text-[var(--secondary)] transition-colors">
+                        <i data-lucide="mail"></i>
+                        <span>rnath@alumni.harvard.edu</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/ruhi-nath/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 hover:text-[var(--secondary)] transition-colors">
+                         <i data-lucide="linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-200 mt-12">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-500">
+            <p>&copy; <span id="year"></span> Ruhi Nath. Designed with hope.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Page Navigation Logic
+        const pageLinks = document.querySelectorAll('.page-link');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const pages = document.querySelectorAll('.page-section');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+
+        function showPage(pageId) {
+            // Hide all pages
+            pages.forEach(page => page.classList.remove('active'));
+            // Show the target page
+            const targetPage = document.getElementById(pageId);
+            if(targetPage) {
+                targetPage.classList.add('active');
+            }
+
+            // Update active state for nav links
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${pageId}`) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Close mobile menu after navigation
+            if(!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        pageLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const pageId = link.getAttribute('href').substring(1);
+                showPage(pageId);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+
+        // Mobile menu toggle
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Show initial page (home)
+        showPage('home');
+    </script>
+
+</body>
+</html>
